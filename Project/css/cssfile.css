@@ -1,6 +1,10 @@
+html
+{
+    font-size: 100%;
+}
 body {
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-    font-size: 18px;
+    font-size: 30px;
     font-weight: 300;
     color: white;
     overflow-x: hidden;
@@ -388,7 +392,7 @@ footer a { color: white; }
 
 @media (max-width: 640px) {
   .tm-section-carousel {    
-    max-width: 300px;
+    max-width: 640px;
     padding-bottom: 50px;
   }
 }
