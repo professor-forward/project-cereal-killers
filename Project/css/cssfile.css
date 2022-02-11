@@ -28,7 +28,7 @@ a { color: #FFF;  }
 
 a:hover { color: #FF0; }
 
-h1,h2,h3 { font-weight: 300; }
+h1,h2,h3 { font-weight: 300; text-shadow: 1px 0.5px 2px rgb(82, 82, 82); }
 
 p {
     font-size: 1rem;
@@ -551,4 +551,9 @@ footer a { color: white; }
 /* JavaScript Turned Off */
 .no-js #loader-wrapper {
     display: none;
+}
+
+details {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 3px rgb(50, 50, 50);
 }
