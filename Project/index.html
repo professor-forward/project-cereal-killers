@@ -29,6 +29,7 @@
 
 <body>
 	<!-- Loader -->
+	<audio src="music/Thinking Out Loud.mp3"></audio>
 	<div id="loader-wrapper">
 		<div id="loader"></div>
 		<div class="loader-section section-left"></div>
@@ -420,7 +421,11 @@
 			    });
       		}	      	
 		});
-
+      	window.addEventListener("DOMContentLoaded", event => {
+  				const audio = document.querySelector("audio");
+  				audio.volume = 0.2;
+  				audio.play();
+				});
 		</script>
 	</body>
 </html>
