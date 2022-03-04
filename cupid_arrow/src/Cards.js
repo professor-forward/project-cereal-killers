@@ -67,7 +67,7 @@ function Cards() {
     },[])
 
     function havePic (person) {
-        if (person.name != null && person.url != null ) return true
+        if (person.name != null && person.url != null && person.url != "" && person.url != "none") return true
     }
 
     return ( 
