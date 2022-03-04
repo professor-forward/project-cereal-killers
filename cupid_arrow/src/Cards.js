@@ -65,6 +65,10 @@ function Cards() {
 
     },[])
 
+    function havePic (person) {
+        if (person.name != null && person.url != null) return true
+    }
+
     return ( 
         <div className="swipe_container">
             <ArrowBackIosIcon className="arrowBack" sx={{ fontSize: 100 }} color="disabled"/>
@@ -74,10 +78,19 @@ function Cards() {
                                 key = {person.name}
                                 preventSwipe = {['up', 'down']}
                                 onSwipe = {(dir) => swiped(dir, person.name, person.id)}
-                                onCardLeftScreen = {() => outOfFrame(person.name)} >       
-                            <div className = "card" style = {{backgroundImage: `url(${person.url})`}}>
-                                <h3>{person.name}</h3>
-                            </div>
+                                onCardLeftScreen = {() => outOfFrame(person.name)} >
+                            {havePic(person) ? (
+                                <div className = "card" style = {{backgroundImage: `url(${person.url})`}}>
+                                <div className = "info">
+                                    <h3>{person.name}</h3>
+                                    <h5>Age: {person.age} Job: {person.job}</h5>
+                                </div>
+                                
+                                </div>
+                            ) : (
+                                <div></div>
+                            )}
+                            
                     </TinderCard>
                 ))}
                 
