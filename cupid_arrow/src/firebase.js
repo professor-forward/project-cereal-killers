@@ -75,7 +75,7 @@ export async function createUserDoc(user){
 				email: email,
 				mathches : [ ],
 				name : "Test",
-				url : "none",
+				url : "",
 			})
 		} catch(error) {
 			console.log ('Eooro in creating user', error)

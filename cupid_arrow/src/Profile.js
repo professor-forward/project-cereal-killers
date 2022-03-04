@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './Profile.css'
 import database from './firebase';
 import { doc, setDoc } from "firebase/firestore/lite";
-
+import { getAuth} from "firebase/auth";
 
 import { Link, useHistory } from "react-router-dom";
 
@@ -15,9 +15,13 @@ function Profile() {
     const [aboutme, setaboutme] = useState("");
     const [image, setimage] = useState("");
 
+    const auth = getAuth();
+    const user = auth.currentUser;
+    if (user !== null) {var uid = user.uid;}
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        setDoc(doc(database, "people", "VAZ8fZb58tbKLvkcCJbw"),{
+        setDoc(doc(database, "people", uid),{
             name:username,
             gender:gender,
             age:age,
