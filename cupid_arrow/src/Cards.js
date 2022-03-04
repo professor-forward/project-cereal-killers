@@ -21,7 +21,8 @@ function Cards() {
             console.log("removing: "+ nameToSwipe)
             const docRef = doc(database, 'people/'+peopleId)
             await updateDoc(docRef, {
-                matches: arrayUnion("SL3GgUJDB3v3hpC1c1Zx") //User's document id 
+                 //User's document id 
+                likes: arrayUnion(doc(database, 'people/'+'SL3GgUJDB3v3hpC1c1Zx'))
             })
             console.log("Add "+ nameToSwipe+" to like")
         } else {
@@ -66,7 +67,7 @@ function Cards() {
     },[])
 
     function havePic (person) {
-        if (person.name != null && person.url != null) return true
+        if (person.name != null && person.url != null ) return true
     }
 
     return ( 
