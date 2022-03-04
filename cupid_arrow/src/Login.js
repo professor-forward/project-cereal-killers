@@ -1,15 +1,17 @@
 import React from 'react'
 import "./Login.css"
-
+import { useHistory} from "react-router-dom";
 import { useRef, useState } from "react";
 
 import { signup, login, logout, useAuth, createUserDoc } from "./firebase";
 import { collection, Firestore } from 'firebase/firestore/lite';
 import { getIdToken } from 'firebase/auth';
 
+
 export default function Login() {
   const [ loading, setLoading ] = useState(false);
   const currentUser = useAuth();
+  const history = useHistory();
 
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -19,11 +21,13 @@ export default function Login() {
     setLoading(true);
     try {
       await signup(emailRef.current.value, passwordRef.current.value);
-      
     } catch {
       alert("The email or the password doesn't meet the requirment!");
+      setLoading(false);
+      return;
     }
     setLoading(false);
+    return history.push("./main");
   }
 
   async function handleLogin() {
@@ -32,8 +36,11 @@ export default function Login() {
       await login(emailRef.current.value, passwordRef.current.value);
     } catch {
       alert("The email or the password is wrong!");
+      setLoading(false);
+      return;
     }
     setLoading(false);
+    return history.push("./main");
   }
 
   async function handleLogout() {
@@ -49,8 +56,9 @@ export default function Login() {
   } 
 
   return (
+  
     <center>
-      
+     
       <div>Currently logged in as: { currentUser?.email } </div>
 
       <div id="fields">
