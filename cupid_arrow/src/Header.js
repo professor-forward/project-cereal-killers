@@ -18,9 +18,11 @@ function Header({ backButton }) {
             <ArrowBackIosNewIcon fontSize="large" className="header_icon" />
           </IconButton>
         ) : (
-          <IconButton>
-            <PersonIcon className = "header_icon" fontSize ="large"/>
-          </IconButton>
+          <Link to="/profile">
+            <IconButton>
+              <PersonIcon className="header_icon" fontSize="large" />
+            </IconButton>
+          </Link>
         )}
 
         <Link to="/">

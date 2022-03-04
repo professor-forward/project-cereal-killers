@@ -3,6 +3,7 @@ import Header from "./Header"
 import Cards from "./Cards"
 import Buttons from './Buttons';
 import Chats from "./chats/Chats";
+import Profile from "./Profile"
 import ChatScreen from "./chats/ChatScreen";
 import Login from "./Login";
 import './App.css';
@@ -34,7 +35,12 @@ function App() {
             <Header backButton="/" />
             <Chats />
           </Route>
-          
+          {/* Profile Screen */}
+          <Route path="/profile">
+            {/* Header */}
+            <Header backButton="/" />
+            <Profile />
+          </Route>
           {/* Main Page */}
           <Route path = "/">
             {/* Header */}
