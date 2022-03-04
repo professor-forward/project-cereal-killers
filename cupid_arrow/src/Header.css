@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #f9f9f9;
-    background:  linear-gradient(#39c5bb, white );
+    background:  linear-gradient(#E27D60, #E27D60);
 }
 
 .header_logo {
@@ -13,4 +13,7 @@
 
 .header_icon {
     padding: 20px;
+}
+body{
+    background-color: #C38D9E;
 }
