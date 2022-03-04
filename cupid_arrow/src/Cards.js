@@ -84,7 +84,10 @@ function Cards() {
                                 <div className = "card" style = {{backgroundImage: `url(${person.url})`}}>
                                 <div className = "info">
                                     <h3>{person.name}</h3>
-                                    <h5>Age: {person.age} Job: {person.job}</h5>
+                                    <h5>
+                                        {person.age != null ? (<div>Age: {person.age} </div>) : (<div></div>)} 
+                                        {person.job != null ? (<div>job: {person.job} </div>) : (<div></div>)}
+                                    </h5>
                                 </div>
                                 
                                 </div>
