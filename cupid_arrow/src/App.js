@@ -16,8 +16,9 @@ function App() {
     <div className="App">
       <Router>
 
-        <Switch>
+      <Switch>
           <Route path = "/login">
+            <Header backButton="/" />
             <Login /> 
           </Route>
 

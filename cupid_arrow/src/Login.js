@@ -1,33 +1,75 @@
 import React from 'react'
 import "./Login.css"
 
-function Login() {
+import { useRef, useState } from "react";
+
+import { signup, login, logout, useAuth, createUserDoc } from "./firebase";
+import { collection, Firestore } from 'firebase/firestore/lite';
+import { getIdToken } from 'firebase/auth';
+
+export default function Login() {
+  const [ loading, setLoading ] = useState(false);
+  const currentUser = useAuth();
+
+  const emailRef = useRef();
+  const passwordRef = useRef();
+
+
+  async function handleSignup() {
+    setLoading(true);
+    try {
+      await signup(emailRef.current.value, passwordRef.current.value);
+      
+    } catch {
+      alert("The email or the password doesn't meet the requirment!");
+    }
+    setLoading(false);
+  }
+
+  async function handleLogin() {
+    setLoading(true);
+    try {
+      await login(emailRef.current.value, passwordRef.current.value);
+    } catch {
+      alert("The email or the password is wrong!");
+    }
+    setLoading(false);
+  }
+
+  async function handleLogout() {
+    setLoading(true);
+    try {
+      await logout();
+    } catch {
+      alert("Error!");
+    }
+    setLoading(false);
+    
+
+  } 
+
   return (
-    <div>
-        <div id="content_container">
-            <div id="form_container">
-                <div id="form_header_container">
-                    <h2 id="form_header"> Cupid's Arrow </h2> 
-                </div>
+    <center>
+      
+      <div>Currently logged in as: { currentUser?.email } </div>
 
-                <div id="form_content_container">
-                    <div id="form_content_inner_container">
-                        <input type="text" id="username" placeholder="username" />
-                        <input type="email" id="email" placeholder="Email" />
-                        <input type="password" id="password" placeholder="Password" />
+      <div id="fields">
+   
+        <input ref={emailRef} type="text" placeholder="Email" />
+        
+      </div>
 
+      <div id="fields">
+        <input ref={passwordRef} type="password" placeholder="Password" />
+       
+        
+      </div>
+      
 
-                        <div id="button_container">
-                            <button onclick="login()">Login</button>
-                            <button onclick="register()">Register</button>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-  )
+      <button disabled={ loading || currentUser } onClick={handleSignup}>Sign Up</button>
+      <button disabled={ loading || currentUser } onClick={handleLogin}>Log In</button>
+      <button disabled={ loading || !currentUser } onClick={handleLogout}>Log Out</button>
+    
+    </center>
+  );
 }
-
-export default Login
