@@ -3,8 +3,11 @@ import React, { useState, useEffect } from 'react'
 import TinderCard from "react-tinder-card"
 import database from "./firebase"
 import { collection, getDocs } from 'firebase/firestore/lite';
-
 import { doc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore/lite";
+
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+
 
 
 function Cards() {
@@ -64,6 +67,7 @@ function Cards() {
 
     return ( 
         <div className="swipe_container">
+            <ArrowBackIosIcon className="arrowBack" sx={{ fontSize: 100 }} color="disabled"/>
             <div className="cards_container">
                 {people.map(person => (
                     <TinderCard className = "swipe"
@@ -76,14 +80,9 @@ function Cards() {
                             </div>
                     </TinderCard>
                 ))}
-                <div className="swipe_info">
-                    {lastDirection ? (
-                        <p>You swiped {lastDirection} </p>
-                     ) : (
-                        <p/>
-                     )}
-                </div>
+                
             </div>
+            <ArrowForwardIosIcon className="arrowFor" sx={{ fontSize: 100 }} color="disabled"/>
         </div>
             
     )

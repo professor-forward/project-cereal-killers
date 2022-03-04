@@ -1,9 +1,10 @@
 .buttons {
     display: flex;
     position: fixed;
-    bottom: 10vh;
+    bottom: 0vh;
     width: 100%;
     justify-content: space-evenly;
+    background:  linear-gradient( white, #39c5bb );
 }
 
 /* button background*/
