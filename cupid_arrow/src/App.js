@@ -16,12 +16,8 @@ function App() {
     <div className="App">
       <Router>
 
-      <Switch>
-          <Route path = "/login">
-            <Header backButton="/" />
-            <Login /> 
-          </Route>
-
+        <Switch>
+         
 
           {/* Chats Screen */}
           <Route path = "/messages/:person">
@@ -33,17 +29,17 @@ function App() {
           {/* Chats Screen */}
           <Route path = "/messages">
             {/* Header */}
-            <Header backButton="/" />
+            <Header backButton="/main" />
             <Chats />
           </Route>
           {/* Profile Screen */}
           <Route path="/profile">
             {/* Header */}
-            <Header backButton="/" />
+            <Header backButton="/main" />
             <Profile />
           </Route>
           {/* Main Page */}
-          <Route path = "/">
+          <Route path = "/main">
             {/* Header */}
             <Header />
             {/* Cards Container*/}
@@ -51,6 +47,12 @@ function App() {
             {/* Buttons below */}
             <Buttons />
           </Route>
+
+          <Route path = "/">
+           
+            <Login /> 
+          </Route>
+
           
         </Switch>
 
@@ -64,6 +66,7 @@ export default App;
 
         
 {/* Individual chat screen */}
+
 
 
 
