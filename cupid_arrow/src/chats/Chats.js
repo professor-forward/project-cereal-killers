@@ -1,9 +1,7 @@
 import React ,{ useState, useEffect }from 'react'
 import './Chats.css'
 import Chat from  "./Chat"
-// import { getAuth } from "firebase/auth";
-// import { doc, collection, query, where, getDoc} from "firebase/firestore/lite";
-// import database from "../firebase"
+// s
 
 
 function Chats() {
