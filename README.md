@@ -34,3 +34,5 @@ In our UI design, there are 5 sections:
 
 **My profile page**: page for the user to update and fill in their information.
 
+[Deliverable 3 ](Cupid's%20Arrow%20README.pdf)
+
