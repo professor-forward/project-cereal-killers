@@ -51,7 +51,12 @@ function Profile() {
                 <b>username</b><br></br>
                 <input type="text" id="username" value={username} onChange={(e) => setuserame(e.target.value)}></input><br></br>
                 <b>Gender</b><br></br>
-                <input type="text" id="gender" value={gender} onChange={(e) => setGender(e.target.value)}></input><br></br>
+                <select id="gender" value={gender} onChange={(e) => setGender(e.target.value)}>
+                    <option selected="selected">--Choose Your Gender--</option>
+                    <option value="male"> Male </option>
+                    <option value="female"> Female</option>
+                    <option value="secret"> Secret </option>
+                </select><br></br>
                 <b>Age</b><br></br>
                 <input type="number" id="age" value={age} onChange={(e) => setAge(e.target.value)}></input><br></br>
                 <b>Birthday</b><br></br>
