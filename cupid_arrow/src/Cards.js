@@ -24,7 +24,7 @@ function Cards() {
     // Every time swipe the card , call swiped function to log the swipe name and direction
     async function swiped (direction, nameToSwipe, peopleId, uid) {
         setLastDirection(direction)
-        if (direction == "right") {
+        if (direction === "right") {
             console.log("removing: "+ nameToSwipe)
             const docRef = doc(database, 'people/' + uid)
             await updateDoc(docRef, {
@@ -74,7 +74,7 @@ function Cards() {
     },[]);
 
     function havePic (person) {
-        if (person.name != null && person.url != null && person.url != "" && person.url != "none") return true
+        if (person.name !== null && person.url !== null && person.url !== "" && person.url !== "none") return true
     }
 
     console.log("Card current user " , uid)
@@ -94,8 +94,8 @@ function Cards() {
                                 <div className = "info">
                                     <h3>{person.name}</h3>
                                     <h5>
-                                        {person.age != null ? (<div>Age: {person.age} </div>) : (<div></div>)} 
-                                        {person.job != null ? (<div>job: {person.job} </div>) : (<div></div>)}
+                                        {(person.age !== null && person.age !== "")? (<div>Age: {person.age} </div>) : (<div></div>)} 
+                                        {(person.job !== null && person.job !== "")? (<div>job: {person.job} </div>) : (<div></div>)}
                                     </h5>
                                 </div>
                                 

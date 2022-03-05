@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Profile.css'
 import database from './firebase';
-import { doc, setDoc } from "firebase/firestore/lite";
+import { doc, setDoc, getDoc } from "firebase/firestore/lite";
 import { getAuth} from "firebase/auth";
 
 import { Link, useHistory } from "react-router-dom";
@@ -18,6 +18,18 @@ function Profile() {
     const auth = getAuth();
     const user = auth.currentUser;
     if (user !== null) {var uid = user.uid;}
+
+    const docRef = doc(database, `people/${uid}`);
+    async function getData() {
+        var docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+            console.log("Document data:", docSnap.data());
+          } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+          }
+        
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -42,6 +54,7 @@ function Profile() {
         setJob("");
         setaboutme("");
         setGender("");
+        getData();
     }
     return (
         //<Link to={`/profile`}>
@@ -69,6 +82,7 @@ function Profile() {
                 <input type="file" id="image" value={image} onChange={(e) => setimage(e.target.value)}></input><br></br>
                 <button type="submit" id="submit">Submit</button>
             </form>
+            
         </center>
 
         //</Link>

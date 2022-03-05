@@ -1,10 +1,45 @@
-import React from 'react'
+import React ,{ useState, useEffect }from 'react'
 import './Chats.css'
 import Chat from  "./Chat"
+// import { getAuth } from "firebase/auth";
+// import { doc, collection, query, where, getDoc} from "firebase/firestore/lite";
+// import database from "../firebase"
+
 
 function Chats() {
+  // const auth = getAuth();
+  // const user = auth.currentUser;
+  // const [likesList, setLikesList] = useState([]);
+
+  // useEffect(() => {
+  //   async function getLikes() {
+  //     if (user !== null) {
+  //       var uid = user.uid;
+  //       const docRef = doc(database, "people", uid);
+  //       const docSnap = await getDoc(collection(database, 'people', uid));
+  //       const likes = docSnap.doc.map(doc => {
+  //         return (doc.data().likes)
+  //       })
+  //       setLikesList(likes);
+  //       console.log(likesList);
+  //     }
+  //   }
+    
+  //   (async() => {
+  //     const unsubscribe = await getLikes();
+      
+  //     return() => {
+  //         unsubscribe();
+  //     }
+  //   })();
+    
+  // },[]);
+  
+
   return (
+    
     <div className='chats'>
+        {/* <div>{likesList.map(likess => (<div>{likess}</div>))}</div> */}
         <Chat
           name = "Ellen"
           message = "Hello World"
@@ -14,6 +49,7 @@ function Chats() {
             
         </Chat>
     </div>
+    
   )
 }
 
