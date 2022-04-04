@@ -100,7 +100,7 @@ app.put('/addmatch',async(req,res)=>{
         await client.connect()
         const database = client.db('app-data')
         const users = database.collection('users')
-        const query={user_id:userId}
+        const query = { user_id:userId }
         const updateDocument ={
             $push:{matches:{user_id:matchedUserId}},
         }
@@ -192,12 +192,47 @@ app.put('/user',async(req,res)=>{
                 matches:formData.matches
             },
         }
-        const insertedUsser = await users.updateOne(query,updateDocument)
-        res.send(insertedUsser)
+        const insertedUser = await users.updateOne(query,updateDocument)
+        res.send(insertedUser)
     } finally{
         await client.close()
     }
 })
+
+app.get('/messages', async (req, res) => {
+    const client = new MongoClient(uri)
+    const { userId, correspondingUserId} = req.query
+    console.log(userId, correspondingUserId)
+    try {
+        await client.connect()
+        const database = client.db('app-data')
+        const messages = database.collection('messages')
+
+        const query = {
+            from_userId: userId, to_userId: correspondingUserId
+        }
+        const foundMessages = await messages.find(query).toArray()
+        res.send(foundMessages)
+    } finally {
+        await client.close()
+    }
+
+})
+
+app.post('./message', async(req, res) => {
+    const client = new MongoClient(uri)
+    const message = req.body.message
+    try {
+        await client.connect()
+        const database = client.db('app-data')
+        const messages = database.collection('messages')
+        const insertedMessage = await messages.insertOne(message)
+        res.send(insertedMessage)
+    } finally {
+        await client.close()
+    }
+})
+
 
 
 app.listen(PORT,()=>console.log('Server running on port'+PORT))
