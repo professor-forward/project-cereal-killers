@@ -11,7 +11,6 @@ const Dashboard = () =>{
     const [lastDirection, setLastDirection] = useState()
     const userId = cookies.UserId
 
-    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!". userId)
 
     const getUser = async()=>{
         try{

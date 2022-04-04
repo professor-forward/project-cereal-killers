@@ -10,6 +10,7 @@ const ChatHeader =({user})=>{
         window.location.reload()
     }
 
+
     return (
         <div className="chat-container-header">
             <div className="profile">

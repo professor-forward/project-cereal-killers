@@ -8,7 +8,6 @@ const ChatContainer =({user})=>{
 
     console.log('clickUser', clickedUser)
 
-
     return (
         <div className="chat-container">
             <ChatHeader user={user}/>
@@ -18,9 +17,9 @@ const ChatContainer =({user})=>{
                 <button className="option" disabled ={!clickedUser}>Chat</button>
             </div>
 
-            {!clickedUser && <MatchesDisplay macthes={user.matches} setClickedUser={ setClickedUser }/>}
-
             {clickedUser && <ChatDisplay user={user} clickedUser={clickedUser}/>}
+
+            {!clickedUser && <MatchesDisplay user={user} setClickedUser={ setClickedUser }/>}
         </div>
     )
 }

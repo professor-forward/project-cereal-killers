@@ -2,10 +2,13 @@ import axios from 'axios'
 import{useEffect,useState} from 'react'
 
 
-const MatchesDisplay =({matches, setClickedUser})=>{
+const MatchesDisplay =({user, setClickedUser})=>{
+    console.log("UUUU",user)
+    const matches = user.matches
 
-    const [matchedProfiles,setMatchedProfiles]=useState(null)
+    const [ matchedProfiles, setMatchedProfiles ]=useState(null)
 
+    console.log('MMMMMMMM',matches)
 
     const matchedUserIds = matches.map(({user_id}) => user_id)
 
