@@ -6,9 +6,9 @@ import ChatContainer from '../components/ChatContainer'
 const Dashboard = () =>{
 
     const [user,setUser]=useState(null)
-
+    const [genderedUsers,setGenderedUsers] = useState(null)
     const[cookies,setCookies,removeCookie]=useCookies(['user'])
-
+    const [lastDirection, setLastDirection] = useState()
     const userId = cookies.UserId
 
     const getUser = async()=>{
@@ -21,43 +21,48 @@ const Dashboard = () =>{
             console.log(err)
         }
     }
+
+    const getGenderedUsers = async()=>{
+        try{
+            const response = await axios.get('http://localhost:8000/gendered-users',{
+                params:{gender:user?.gender_interest}
+            })
+            setGenderedUsers(response.data)
+        }catch(err){
+            console.log(err)
+        }
+    }
+
     useEffect(()=>{
       getUser()
-    },[user])
+        getGenderedUsers()
+    },[user,genderedUsers])
 
     console.log('user',user)
+    console.log('gendered users',genderedUsers)
 
 
 
 
 
-
-    const characters = [
-        {
-            name: 'Richard Hendricks',
-            url: 'https://media.allure.com/photos/619bb30d6847f48cce05de3c/1:1/w_1519,h_1519,c_limit/hailey%20bieber.jpg'
-        },
-        {
-            name: 'Erlich Bachman',
-            url: './img/erlich.jpg'
-        },
-        {
-            name: 'Monica Hall',
-            url: './img/monica.jpg'
-        },
-        {
-            name: 'Jared Dunn',
-            url: './img/jared.jpg'
-        },
-        {
-            name: 'Dinesh Chugtai',
-            url: './img/dinesh.jpg'
+    const updateMatches = async(matchedUserId)=>{
+        try{
+            await axios.put('http://localhost:8000/addmatch',{
+                userId,
+                matchedUserId
+            })
+            getUser()
+        }catch(err){
+            console.log(err)
         }
-    ]
-    const [lastDirection, setLastDirection] = useState()
+    }
 
-    const swiped = (direction, nameToDelete) => {
-        console.log('removing: ' + nameToDelete)
+
+
+    const swiped = (direction, swipedUserId) => {
+        if(direction==='right'){
+            updatedMatches(swipedUserId)
+        }
         setLastDirection(direction)
     }
 
@@ -65,20 +70,26 @@ const Dashboard = () =>{
         console.log(name + ' left the screen!')
     }
 
+    const matchedUserIds =user?.matches.map(({user_id})=>user_id).concat(userId)
+    const filteredGenderedUsers = genderedUsers?.filter(
+        genderedUser=>!matchedUserIds.includes(genderedUser.user_id)
+    )
     return (
+        <>
+        {user &&
         <div className="dashboard">
-            <ChatContainer/>
+            <ChatContainer user ={user}/>
             <div className="swipe-container">
                 <div className="card-container">
-                    {characters.map((character) =>
+                    {filteredGenderedUsers?.map((character) =>
                         <TinderCard
                             className='swipe'
-                            key={character.name}
-                            onSwipe={(dir) => swiped(dir, character.name)}
-                            onCardLeftScreen={() => outOfFrame(character.name)}>
+                            key={character.first_name}
+                            onSwipe={(dir) => swiped(dir, character.user_id)}
+                            onCardLeftScreen={() => outOfFrame(character.first_name)}>
                             <div style={{ backgroundImage: 'url(' + character.url + ')' }}
                                  className='card'
-                            ><h3>{character.name}</h3>
+                            ><h3>{character.first_name}</h3>
                             </div>
                         </TinderCard>
                     )}
@@ -87,7 +98,8 @@ const Dashboard = () =>{
                     </div>
                 </div>
             </div>
-        </div>
+        </div>}
+        </>
     )
 }
 export default Dashboard;
