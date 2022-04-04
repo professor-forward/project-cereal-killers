@@ -30,7 +30,7 @@ In our UI design, there are 5 sections:
 
 ![colour Plaette](/images/D2/colour.png)
 
-#### **Font and Icon
+#### Font and Icon
 
 For the most ui icon, we use Material UI ([MUI: The React component library you always wanted](https://mui.com/)) @mui/icons-material
 
