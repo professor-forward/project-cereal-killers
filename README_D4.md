@@ -43,7 +43,7 @@ For  users table, we store the information of the users.
 
 &nbsp;
 #### Sample
-The belowing are 2 user name with "qwe" and "Bob". Both of them swiped eacher other, which means they are match.
+The belowing are 2 users name with "qwe" and "Bob". Both of them swiped eacher other, which means they are match.
 ![cardSwiping](/images/D4/cardSwiping.png)
 ![usersMatches](/images/D4/usersMatches.png)
 
