@@ -9,7 +9,7 @@
 ****
 
 ## Deliverable 4
-#### How to run our project
+## How to run our project
 (if you experience difficulty opening our project, try installing webstorm first.)
 
 1. drag/open the whole project folder into the ide
@@ -18,7 +18,7 @@
 4. After the steps above, you should be able to have our page prompt up in your local browser, if you experience any additional problem, please feel free to contact “mgao041@uottawa.ca”.
 
 &nbsp;
-#### Difficulty that you may experience while running our project
+## Difficulty that you may experience while running our project
 After downloading our project, there might be dependencies missing or not fit into your current system. Here are some problems that we experience when we install it to another device.
 
 ###### Error 1: In this case, there were ‘react-scripts’ missing in our depencies.
@@ -42,11 +42,11 @@ then “npm install node-pre-gyp -g”
 then “npm rebuild bcrypt --build-from-source”
 then “npm install bcrypt”
 &nbsp;
-#### Sample Date:
+## Sample Date:
 email:m@m.m
 password:123
 
-#### Added Features of Our Database:
+## Added Features of Our Database:
 1. According to the users’ gender interest, now the system would provide strangers who qualify for him/her to meet.(CSS,JS,HTML,MongoDB)
 2. The user’s friends will be shown and stored in the database, and they are able to chat and their chat will be stored in the database.(CSS,JS,HTML,MongoDB)
 3. Changed our database from firebase into mongDB,also inserted populated with data
@@ -55,7 +55,7 @@ password:123
 6. Added Tokens for authentication
 7. Additional Logic enhancement
 
-#### Structure of Our DataBase
+## Structure of Our DataBase
 our database contains two table listed below
 ###### AppData
 ###### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_messages
@@ -70,21 +70,18 @@ For  users table, we store the information of the users.
 ###### NOTE: for the password section in the users table, we used the dependency tool ‘bcrypt’ to hash our password.
 
 &nbsp;
-#### D4 UI compare with D3:
+## D4 UI compare with D3:
 We add a background image as our home pages. Same as D3, users can choose to login or register on the home page, we just implement the features of it for D4. We update the personal information page to make it more neat and beautiful. Also, during D4, we implement the left swipe to dislike and right swipe to like feature for D3. However, the placement of users’ images has changed slightly. Different from D3, the result of the match will be shown on the left of the screen instead of the top right corner in D3. We have implemented the function of uploading images for personal informations.
 hompage for D4:![homepage](/images/D4/homepage.png)
 D3 login page VS D4 login page:
-![login](/images/D2/login.png)
-![login](/images/D4/login.png)
+![login](/images/D2/login.png)VS![login](/images/D4/login.png)
 D3 personal information page VS D4 personal information page:
-![profile](/images/D2/profile.png)
-![infoCreate](/images/D4/infoCreate.png)
+![profile](/images/D2/profile.png)VS![infoCreate](/images/D4/infoCreate.png)
 D3 swiping cards VS D4 swiping cards:
-![main](/images/D2/main.png)
-![cards](/images/D4/cards.png)
+![main](/images/D2/main.png)VS![cards](/images/D4/cards.png)
 
 &nbsp;
-#### Test for matching
+## Test for matching
 The belowing are 2 users name with "qwe" and "Bob". Both of them swiped eacher other, which means they are match.
 ![cardSwiping](/images/D4/cardSwiping.png)
 ![usersMatches](/images/D4/usersMatches.png)
@@ -93,7 +90,7 @@ In the database, Bob's id shows up under the match of qwe, and qwe's id shows up
 ![qweMatch](/images/D4/qweMatch.png)
 ![bobMatch](/images/D4/bobMatch.png)
 
-#### Screenshot of Feature
+## Screenshot of Feature
 hompage for D4:
 ![homepage](/images/D4/homepage.png)
 Users can log in or create an account on our home page. There is a login page for the users. By clicking on the “create an account”, the personal information form shows.
