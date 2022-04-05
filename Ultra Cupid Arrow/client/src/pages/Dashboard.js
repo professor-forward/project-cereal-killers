@@ -92,6 +92,7 @@ const Dashboard = () =>{
                         <TinderCard
                             className='swipe'
                             key={genderedUser.user_id}
+                            preventSwipe = {['up', 'down']}
                             onSwipe={(dir) => swiped(dir, genderedUser.user_id)}
                             onCardLeftScreen={() => outOfFrame(genderedUser.first_name)}>
                             <div style={{ backgroundImage: 'url(' + genderedUser.url + ')' }}
