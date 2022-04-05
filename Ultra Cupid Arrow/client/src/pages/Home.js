@@ -10,6 +10,7 @@ const Home = () =>{
 
     const authToken = cookies.AuthToken
 
+
     const handleClick =()=>{
 
         if (authToken) {
