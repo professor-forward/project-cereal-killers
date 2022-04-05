@@ -105,4 +105,4 @@ Once logging in, there are some cards of other users shown on the page.
 ![cards](/images/D4/cards.png)
 Left swipe to dislike and right swipe to like. Once they like each other, they are matched. Once they match, then can chat with each other.
 ![cardSwiping](/images/D4/cardSwiping.png)
-![chatBox](/images/D4/chatBox.png)
+<img src="/images/D4/chatBox.png" alt="chatBox" style="zoom:25%;" />
