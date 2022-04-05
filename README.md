@@ -8,7 +8,7 @@
 
 ****
 
- ## Deliverable 2
+ ## [Deliverable 2](CSI3140%20Project%20D1.pdf)
 
  In our project, there are several folders in order to contain the html file, images, css file, and javascript files.
 
