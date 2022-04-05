@@ -47,7 +47,15 @@ For  users table, we store the information of the users.
 After downloading our project, there might be dependencies missing or not fit into your current system. Here are some problems that we experience when we install it to another device.
 
 ###### Error 1: In this case, there were ‘react-scripts’ missing in our depencies.
-![Error1](/images/D4/Error1.png)
+```bash
+PS D:\uOttawa/2022 W\CSI 3140\Project\Ultra Cupid Arrow\client> npm run start:frontend
+
+> cupid-arrow@0.1.0 start:frontend
+.react-scripts start
+
+'react-scriptes' is not internal or external commands, not runnable programs or batch files
+```
+
 To solve it:
 type in  ‘cd client’, then  ‘npm i react-scripts’
 
