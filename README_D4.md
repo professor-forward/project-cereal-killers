@@ -9,6 +9,9 @@
 ****
 
 ## Deliverable 4
+## For this deliverable, the web application is under the floder Ultra Cupid Arrow
+And the server and client are under the separate floders.
+&nbsp;
 ## How to run our project
 (if you experience difficulty opening our project, try installing webstorm first.)
 
@@ -42,11 +45,11 @@ then “npm install node-pre-gyp -g”
 then “npm rebuild bcrypt --build-from-source”
 then “npm install bcrypt”
 &nbsp;
-## Sample Date:
+## Sample Data:
 email:m@m.m
 password:123
 
-## Added Features of Our Database:
+## Added Features of Our Deliverable:
 1. According to the users’ gender interest, now the system would provide strangers who qualify for him/her to meet.(CSS,JS,HTML,MongoDB)
 2. The user’s friends will be shown and stored in the database, and they are able to chat and their chat will be stored in the database.(CSS,JS,HTML,MongoDB)
 3. Changed our database from firebase into mongDB,also inserted populated with data
@@ -55,8 +58,12 @@ password:123
 6. Added Tokens for authentication
 7. Additional Logic enhancement
 
+## The Using of Server and Client
+The Node js was used in our project as the runtime environment, and React was the JavaScript library for building our project. The server side was used to handle the request of login, registation, match and chat. For the client side, it communicates with users and send request to the server.
+
+
 ## Structure of Our DataBase
-our database contains two table listed below
+For our database, we use mongodb database and connect it with our project. And if the user right swipes the card on the main page, it will add the person into their "Match" array in the database. Our database contains two table listed below.
 ###### AppData
 ###### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_messages
 ###### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_users
