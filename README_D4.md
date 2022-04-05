@@ -41,7 +41,15 @@ For  users table, we store the information of the users.
 3. open another terminal, type in “cd server” to go to the server folder and run our project’s backend with “npm run start:backend”
 4. After the steps above, you should be able to have our page prompt up in your local browser, if you experience any additional problem, please feel free to contact “mgao041@uottawa.ca”.
 
+&nbsp;
+#### Sample
+The belowing are 2 user name with "qwe" and "Bob". Both of them swiped eacher other, which means they are match.
+![cardSwiping](/images/D4/cardSwiping.png)
+![usersMatches](/images/D4/usersMatches.png)
 
+In the database, Bob's id shows up under the match of qwe, and qwe's id shows up under the match of Bob.
+![qweMatch](/images/D4/qweMatch.png)
+![bobMatch](/images/D4/bobMatch.png)
 
 #### Difficulty that experienced while running our project
 After downloading our project, there might be dependencies missing or not fit into your current system. Here are some problems that we experience when we install it to another device.
@@ -74,3 +82,8 @@ Users can log in or create an account on our home page. There is a login page fo
 ![infoCreate](/images/D4/infoCreate.png)
 The log in page: 
 ![login](/images/D4/login.png)
+Once logging in, there are some cards of other users shown on the page.  
+![cards](/images/D4/cards.png)
+Left swipe to dislike and right swipe to like. Once they like each other, they are matched. Once they match, then can chat with each other.
+![cardSwiping](/images/D4/cardSwiping.png)
+![chatBox](/images/D4/chatBox.png)
