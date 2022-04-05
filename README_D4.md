@@ -18,6 +18,30 @@
 4. After the steps above, you should be able to have our page prompt up in your local browser, if you experience any additional problem, please feel free to contact “mgao041@uottawa.ca”.
 
 &nbsp;
+#### Difficulty that you may experience while running our project
+After downloading our project, there might be dependencies missing or not fit into your current system. Here are some problems that we experience when we install it to another device.
+
+###### Error 1: In this case, there were ‘react-scripts’ missing in our depencies.
+```bash
+PS D:\uOttawa/2022 W\CSI 3140\Project\Ultra Cupid Arrow\client> npm run start:frontend
+
+> cupid-arrow@0.1.0 start:frontend
+>react-scripts start
+
+'react-scripts' is not internal or external commands, not runnable programs or batch files
+```
+
+To solve it:
+type in  ‘cd client’, then  ‘npm i react-scripts’
+
+###### Error 2: Error message “bcrypt_lib.node is not a valid Win32 application.”
+To solve it:
+first, in the current folder(client), Delete bcrypt folder in server/node_modules
+run
+then “npm install node-pre-gyp -g”
+then “npm rebuild bcrypt --build-from-source”
+then “npm install bcrypt”
+&nbsp;
 #### Sample Date:
 email:m@m.m
 password:123
@@ -69,30 +93,6 @@ In the database, Bob's id shows up under the match of qwe, and qwe's id shows up
 ![qweMatch](/images/D4/qweMatch.png)
 ![bobMatch](/images/D4/bobMatch.png)
 
-#### Difficulty that experienced while running our project
-After downloading our project, there might be dependencies missing or not fit into your current system. Here are some problems that we experience when we install it to another device.
-
-###### Error 1: In this case, there were ‘react-scripts’ missing in our depencies.
-```bash
-PS D:\uOttawa/2022 W\CSI 3140\Project\Ultra Cupid Arrow\client> npm run start:frontend
-
-> cupid-arrow@0.1.0 start:frontend
->react-scripts start
-
-'react-scripts' is not internal or external commands, not runnable programs or batch files
-```
-
-To solve it:
-type in  ‘cd client’, then  ‘npm i react-scripts’
-
-###### Error 2: Error message “bcrypt_lib.node is not a valid Win32 application.”
-To solve it:
-first, in the current folder(client), Delete bcrypt folder in server/node_modules
-run
-then “npm install node-pre-gyp -g”
-then “npm rebuild bcrypt --build-from-source”
-then “npm install bcrypt”
-&nbsp;
 #### Screenshot of Feature
 hompage for D4:
 ![homepage](/images/D4/homepage.png)
