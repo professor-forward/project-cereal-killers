@@ -9,6 +9,19 @@
 ****
 
 ## Deliverable 4
+#### How to run our project
+(if you experience difficulty opening our project, try installing webstorm first.)
+
+1. drag/open the whole project folder into the ide
+2. open a terminal, type in “cd client” to go to client folder and run our project’s front end with “npm run start:frontend”
+3. open another terminal, type in “cd server” to go to the server folder and run our project’s backend with “npm run start:backend”
+4. After the steps above, you should be able to have our page prompt up in your local browser, if you experience any additional problem, please feel free to contact “mgao041@uottawa.ca”.
+
+&nbsp;
+#### Sample Date:
+email:m@m.m
+password:123
+
 #### Added Features of Our Database:
 1. According to the users’ gender interest, now the system would provide strangers who qualify for him/her to meet.(CSS,JS,HTML,MongoDB)
 2. The user’s friends will be shown and stored in the database, and they are able to chat and their chat will be stored in the database.(CSS,JS,HTML,MongoDB)
@@ -33,16 +46,21 @@ For  users table, we store the information of the users.
 ###### NOTE: for the password section in the users table, we used the dependency tool ‘bcrypt’ to hash our password.
 
 &nbsp;
-#### How to run our project
-(if you experience difficulty opening our project, try installing webstorm first.)
-
-1. drag/open the whole project folder into the ide
-2. open a terminal, type in “cd client” to go to client folder and run our project’s front end with “npm run start:frontend”
-3. open another terminal, type in “cd server” to go to the server folder and run our project’s backend with “npm run start:backend”
-4. After the steps above, you should be able to have our page prompt up in your local browser, if you experience any additional problem, please feel free to contact “mgao041@uottawa.ca”.
+#### D4 UI compare with D3:
+We add a background image as our home pages. Same as D3, users can choose to login or register on the home page, we just implement the features of it for D4. We update the personal information page to make it more neat and beautiful. Also, during D4, we implement the left swipe to dislike and right swipe to like feature for D3. However, the placement of users’ images has changed slightly. Different from D3, the result of the match will be shown on the left of the screen instead of the top right corner in D3. We have implemented the function of uploading images for personal informations.
+hompage for D4:![homepage](/images/D4/homepage.png)
+D3 login page VS D4 login page:
+![login](/images/D2/login.png)
+![login](/images/D4/login.png)
+D3 personal information page VS D4 personal information page:
+![profile](/images/D2/profile.png)
+![infoCreate](/images/D4/infoCreate.png)
+D3 swiping cards VS D4 swiping cards:
+![main](/images/D2/main.png)
+![cards](/images/D4/cards.png)
 
 &nbsp;
-#### Sample
+#### Test for matching
 The belowing are 2 users name with "qwe" and "Bob". Both of them swiped eacher other, which means they are match.
 ![cardSwiping](/images/D4/cardSwiping.png)
 ![usersMatches](/images/D4/usersMatches.png)
@@ -76,6 +94,7 @@ then “npm rebuild bcrypt --build-from-source”
 then “npm install bcrypt”
 &nbsp;
 #### Screenshot of Feature
+hompage for D4:
 ![homepage](/images/D4/homepage.png)
 Users can log in or create an account on our home page. There is a login page for the users. By clicking on the “create an account”, the personal information form shows.
 ![register](/images/D4/register.png)
