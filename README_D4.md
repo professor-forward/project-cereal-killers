@@ -51,9 +51,9 @@ After downloading our project, there might be dependencies missing or not fit in
 PS D:\uOttawa/2022 W\CSI 3140\Project\Ultra Cupid Arrow\client> npm run start:frontend
 
 > cupid-arrow@0.1.0 start:frontend
-.react-scripts start
+>react-scripts start
 
-'react-scriptes' is not internal or external commands, not runnable programs or batch files
+'react-scripts' is not internal or external commands, not runnable programs or batch files
 ```
 
 To solve it:
